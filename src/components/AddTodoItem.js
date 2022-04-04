@@ -8,7 +8,8 @@ class AddTodoItem extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            todoName: ""
+            todoName: "",
+            buttonEnable:false
         };
         this.changeTodoName = this.changeTodoName.bind(this);
         this.saveTodo = this.saveTodo.bind(this);
@@ -16,7 +17,8 @@ class AddTodoItem extends Component {
 
     changeTodoName(event) {
         this.setState({
-            todoName: event.target.value
+            todoName: event.target.value,
+            buttonEnable: event.target.value !== ""
         });
     }
 
@@ -40,6 +42,7 @@ class AddTodoItem extends Component {
                         onChange={this.changeTodoName}
                     />
                     <button
+                        disabled={!this.state.buttonEnable}
                         className="add-button"
                         onClick={this.saveTodo}
 

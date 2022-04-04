@@ -3,7 +3,8 @@
   display: flex;
   align-content: stretch; }
   .todo-item .todo-item-checkbox {
-    margin: 5px 15px 5px 5px; }
+    margin: 5px 15px 5px 5px;
+    cursor: pointer; }
   .todo-item .todo-item-name {
     flex: 1 0 auto; }
   .todo-item .todo-remove-button {
