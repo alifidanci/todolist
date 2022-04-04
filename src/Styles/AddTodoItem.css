@@ -1,0 +1,22 @@
+.new-todo-box {
+  width: 100%;
+  padding: 15px 0; }
+  .new-todo-box .input-group {
+    display: flex;
+    align-content: stretch; }
+    .new-todo-box .input-group .new-todo-name {
+      flex: 1 0 auto;
+      border: 1px solid #4a4a4a;
+      border-radius: 5px 0 0 5px;
+      border-right: none;
+      padding: 5px 15px; }
+      .new-todo-box .input-group .new-todo-name:focus {
+        border-right: none;
+        outline: none; }
+    .new-todo-box .input-group .add-button {
+      border-radius: 0 5px 5px 0;
+      padding: 5px 15px;
+      border: 1px solid #4a4a4a;
+      background: #bfbfbf; }
+
+/*# sourceMappingURL=AddTodoItem.css.map */

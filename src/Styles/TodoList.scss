@@ -1,0 +1,14 @@
+@import "variables";
+
+.custom-todo-list {
+  padding: 5px 15px;
+  border-radius: 5px;
+  border: 1px solid $border-color-dark;
+  width: 100%;
+
+  .todo-list-items {
+    border: 1px solid $border-color-light;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+}

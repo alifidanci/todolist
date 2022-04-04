@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  background: #efefef; }
+
+.container {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 250px auto;
+  grid-template-rows: 50px auto;
+  grid-template-areas: "header header" "sidebar main";
+  grid-gap: 5px;
+  font-weight: 800;
+  color: #004d40; }
+  .container .header {
+    background: #a7ffeb;
+    grid-area: header;
+    border-radius: 5px;
+    padding: 5px; }
+  .container .sidebar {
+    background: #18ffff;
+    grid-area: sidebar;
+    border-radius: 5px;
+    padding: 5px; }
+    .container .sidebar .menu-icon {
+      display: none; }
+  @media screen and (max-width: 720px) {
+    .container {
+      grid-template-columns: 50px auto; }
+      .container .sidebar .menu-icon {
+        display: inline;
+        font-size: 40px; }
+      .container .sidebar .section-title {
+        display: none; } }
+  @media screen and (max-width: 480px) {
+    .container {
+      grid-template-columns: auto;
+      grid-template-rows: 50px 50px auto;
+      grid-template-areas: "header" "sidebar" "main"; }
+      .container .sidebar .section-title {
+        display: none; } }
+  .container .main {
+    grid-area: main;
+    border-radius: 5px;
+    padding: 5px;
+    display: grid;
+    height: 100%;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 5px;
+    grid-template-rows: 200px auto;
+    grid-template-areas: "slider slider slider" "todolist todolist calendar"; }
+    @media screen and (max-width: 480px) {
+      .container .main {
+        grid-template-columns: 1fr;
+        grid-gap: 5px;
+        grid-template-rows: 200px auto auto;
+        grid-template-areas: "slider " "todolist" "calendar"; } }
+    .container .main .content1 {
+      background: #84ffff;
+      grid-area: slider;
+      border-radius: 5px;
+      padding: 5px; }
+    .container .main .content2 {
+      background: #64ffda;
+      grid-area: todolist;
+      border-radius: 5px;
+      padding: 5px; }
+    .container .main .content3 {
+      background: #73ffba;
+      grid-area: calendar;
+      border-radius: 5px;
+      padding: 5px; }
+
+/*# sourceMappingURL=App.css.map */

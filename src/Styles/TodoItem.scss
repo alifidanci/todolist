@@ -1,0 +1,52 @@
+@import "variables";
+
+.todo-item {
+  padding:5px;
+  display: flex;
+  align-content: stretch;
+
+  .todo-item-checkbox {
+    margin: 5px 15px 5px 5px;
+  }
+
+  .todo-item-name {
+    flex: 1 0 auto;
+  }
+
+  .todo-remove-button {
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all .1s linear;
+    border: none;
+
+    .todo-remove-span {
+      display: none;
+      color:white;
+    }
+
+    .todo-remove-icon {
+      padding: 0 5px;
+    }
+
+    &:hover {
+      background: $bg-remove-button-hover;
+      color:white;
+
+      .todo-remove-span {
+        padding-left: 5px;
+        display: inline;
+      }
+    }
+  }
+
+  &.completed {
+    .todo-item-name {
+      color:green;
+      text-decoration:line-through;
+    }
+  }
+
+  &:not(:last-child) {
+    border-bottom: 1px solid $border-color-light;
+  }
+}

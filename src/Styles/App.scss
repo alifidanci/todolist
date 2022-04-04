@@ -1,0 +1,111 @@
+@import "variables";
+@import "breakpoints";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  background: #efefef;
+}
+
+.container {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: $sidebar-width auto;
+  grid-template-rows: 50px auto;
+  grid-template-areas: "header header" "sidebar main";
+  grid-gap: 5px;
+  font-weight: 800;
+  color: #004d40;
+
+  .header {
+    background: #a7ffeb;
+    grid-area: header;
+    border-radius: $border-radius;
+    padding: $default-padding;
+  }
+
+  .sidebar {
+    background: #18ffff;
+    grid-area: sidebar;
+    border-radius: $border-radius;
+    padding: $default-padding;
+
+    .menu-icon {
+      display: none;
+    }
+  }
+
+
+  @media screen and (max-width: $md) {
+    grid-template-columns: 50px auto;
+
+    .sidebar {
+      .menu-icon {
+        display: inline;
+        font-size: 40px;
+      }
+      .section-title {
+        display: none;
+      }
+    }
+  }
+
+  @media screen and (max-width: $sm) {
+    grid-template-columns: auto;
+    grid-template-rows: 50px 50px auto;
+    grid-template-areas: "header" "sidebar" "main";
+
+    .sidebar {
+      .section-title {
+        display: none;
+      }
+    }
+  }
+
+  .main {
+    grid-area: main;
+    border-radius: $border-radius;
+    padding: $default-padding;
+    display: grid;
+    height: 100%;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 5px;
+    grid-template-rows: $slider-height auto;
+    grid-template-areas: "slider slider slider" "todolist todolist calendar";
+    @media screen and (max-width: $sm) {
+      grid-template-columns: 1fr;
+      grid-gap: 5px;
+      grid-template-rows: $slider-height auto auto;
+      grid-template-areas: "slider " "todolist" "calendar";
+    }
+    .content1 {
+      background: #84ffff;
+      grid-area: slider;
+      border-radius: $border-radius;
+      padding: $default-padding;
+    }
+
+    .content2 {
+      background: #64ffda;
+      grid-area: todolist;
+      border-radius: $border-radius;
+      padding: $default-padding;
+    }
+
+    .content3 {
+      background: #73ffba;
+      grid-area: calendar;
+      border-radius: $border-radius;
+      padding: $default-padding;
+    }
+  }
+}
+
+$breakpoint-tablet: 768px;
+@media (min-width: $breakpoint-tablet) {
+
+}
